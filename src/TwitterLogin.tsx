@@ -82,6 +82,7 @@ export default class TwitterLoginComponent extends React.Component<
     );
     
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    
     if (requestTokenData.oauth_callback_confirmed === "true") {
       if (isSafari) {
         window.open(`https://api.twitter.com/oauth/authorize?oauth_token=${requestTokenData.oauth_token}`, '_self');
